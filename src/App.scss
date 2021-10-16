@@ -3,3 +3,41 @@
    color: white;
    font-family: sans-serif;
  }
+ .animated {
+   justify-content: center;
+   padding: 30px 30px;
+   font-size: 50px;
+   border-radius: 5px;
+   position: absolute;
+   top: 45%;
+   left: 45%;
+   transform: translate(-50%, -50%);
+   cursor: pointer;
+   background: transparent;
+   outline: none;
+   border: none;
+   color:rgb(132, 219, 245);
+ }
+ .animated::before,
+ .animated::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.3s ease-in-out;
+ }
+ .animated::before {
+   border: 2px solid rgb(193, 240, 255);
+ }
+ .animated::after {
+   background:rgb(196, 241, 255);
+   z-index: -1;
+ }
+ .animated:hover::before {
+   transform: scaleY(1.1) scaleX(1.05);
+ }
+ .animated:hover::after {
+  transform: scaleY(0.9) scaleX(0.95);
+ }
